@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TaskManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="Quote_" />
+    </Key>
+    <Property Name="Quote_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Quote_" Type="Int32" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Task_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Due_Date" Type="DateTime" Precision="0" />
+    <Property Name="Task_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="TaskManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tasks1" EntityType="TaskManagementModel.Tasks" />
+    <EntitySet Name="Users1" EntityType="TaskManagementModel.Users" />
+  </EntityContainer>
+</Schema>
